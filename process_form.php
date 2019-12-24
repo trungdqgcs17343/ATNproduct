@@ -1,14 +1,14 @@
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$HOST = "ec2-174-129-254-223.compute-1.amazonaws.com";
+$HOST = "ec2-174-129-33-132.compute-1.amazonaws.com";
 $PORT = "5432";
-$DBNAME = "d9svmbikm2lhoo";
-$USER = "jdcaahdkeriaui";
-$PASSWORD = "9d6d9873cfcd5254dc063187a9a757234d93e9f6a68dee7b2bb987be813a737d";
+$DBNAME = "d595jqdcjdg0kc";
+$USER = "aguxchgramctxq";
+$PASSWORD = "993e88bf26022314e73c1c8e82ec8d4290d8d7bf06f40d1fdeeaffa1700428e6";
 
 //$link = pg_connect("host=$HOST dbname=$DBNAME user=$USER password=$PASSWORD sslmode=require");
- $link = pg_connect("dbname=d9svmbikm2lhoo host=ec2-174-129-254-223.compute-1.amazonaws.com port=5432 user=jdcaahdkeriaui password=9d6d9873cfcd5254dc063187a9a757234d93e9f6a68dee7b2bb987be813a737d sslmode=require");
+ $link = pg_connect("dbname=d595jqdcjdg0kc host=ec2-174-129-33-132.compute-1.amazonaws.com port=5432 user=aguxchgramctxq password=993e88bf26022314e73c1c8e82ec8d4290d8d7bf06f40d1fdeeaffa1700428e6 sslmode=require");
 //$link = pg_connect(getenv("DATABASE_URL"));
 
 // Check connection
@@ -26,31 +26,20 @@ $date =  pg_escape_string($link,$_REQUEST['date']);
 $price =  pg_escape_string($link,$_REQUEST['price']);
 $description = pg_escape_string($link,$_REQUEST['description']);
 
-echo "<br>";
-echo "Product ID: " ;
-echo $id."<br>";
-echo "Product Name: " ;
-echo $name."<br>";
-echo "Category: " ;
-echo $cat."<br>";
-echo "Date: " ;
-echo $date."<br>";
-echo "Price: " ;
-echo $price."USD <br>";
-echo "Description: " ;
-echo $description."<br>";
+echo $id;
+echo "";
+echo $name;
+echo "";
+echo $cat;
+echo "";
+echo $date;
+echo "";
+echo $price;
+echo "";
+echo $desc;
+echo "";
 
-// Attempt insert query execution
 
-/*echo $sql;
-
-$sql2 = "INSERT INTO Product (Id, Product_Name, Catergory, Date, Price, Descriptions) VALUES ('02', 'Me', 'CatX','2019-12-20',11,'abc')";
-
-$sql3 = 'INSERT INTO public."Product" (
-"Date", "Id", "Product_Name", "Catergory", "Descriptions", "Price") VALUES ('."
-'2019-12-20'::date, '121210'::character varying(20), 'my product XYZ'::character varying(100), 'kit'::character varying(40), 'my product xyz'::character varying(200), '12'::integer)".
- 'returning "Id"';
-echo $sql3;*/
 $sql4 = 'INSERT INTO public."Product" (
 "Date", "Id", "Product_Name", "Catergory", "Descriptions", "Price") VALUES ('."
 '$date'::date, '$id'::character varying(20), '$name'::character varying(100), '$cat'::character varying(40), '$description'::character varying(200), '$price'::integer)".
